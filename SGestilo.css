@@ -1,0 +1,553 @@
+ /*----------Estilos Generales----------*/
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #e0f7fa, #80deea); 
+    color: #333;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+/*----------Barra de Navegación Lateral----------*/
+/* Barra de Navegación Lateral */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #0825dd6e;
+    backdrop-filter: blur(10px); 
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(20px); 
+    transition: transform 0.3s ease;
+}
+
+/* Ocultar la barra lateral cuando está en modo "hidden" */
+.navbar.hidden {
+    transform: translateX(-250px);
+}
+
+
+    
+/* Pestaña del ícono de hamburguesa */
+.hamburger-tab {
+    padding: 15px; /* Aumentar el padding */
+    width: 30px; /* Establecer un ancho mayor */
+    height: 8px; /* Establecer una altura mayor */
+    border-radius: 10px;
+    position: fixed;
+    top: 15px;
+    left: 250px;
+    background-color: #80deea;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1100;
+    transition: left 0.6s ease;
+    
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    top: 10px;
+}
+
+/* Transformación del ícono de hamburguesa a "X" */
+.hamburger-tab.active .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-tab.active .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger-tab.active .hamburger {
+    background-color: transparent; /* Oculta la línea del medio */
+}
+
+
+
+
+
+
+
+
+
+
+/*----------Estilos para los Enlaces de Navegación----------*/
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+/* Efecto de hover acuático */
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(173, 216, 230, 0.7); /* Azul claro */
+    z-index: 1;
+    transition: top 0.4s ease;
+}
+
+.nav-links li:hover::before {
+    top: 0;
+}
+
+/*----------Sección de Bienvenida----------*/
+section#inicio {
+    position: relative;
+    background: url('img/nils-schirmer-i-hFQmgnl24-unsplash.jpg') no-repeat center center/cover;
+    color: #31c2ee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 120px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+section#inicio h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #80deea;
+}
+
+/* Cuadro semitransparente */
+section#inicio .overlay-box {
+    background-color: rgba(0, 0, 0, 0.61); /* Fondo negro semitransparente */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.479);
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    width: 80%; /* Ajuste responsivo para la anchura */
+    max-width: 800px; /* Ancho máximo */
+}
+
+section#inicio .overlay-box p {
+    color: #e0f7fa;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/*----------Estilos para cada Sección----------*/
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section#about, section#services, section#events, section#reservations, section#testimonials, section#contact {
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 60px 20px;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #00796b;
+}
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+form button {
+    background-color: #00796b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #004d40;
+}
+
+/*----------Estilos para la Galería----------*/
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+
+/* SECCIÓN DE TESTIMONIOS */
+.testimonials-section {
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.testimonials-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonials-content h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.testimonials-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #181111;
+}
+
+.testimonials-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.testimonials-content input,
+.testimonials-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+.testimonials-content button {
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimonials-content button:hover {
+    background-color: #0077cc;
+}
+
+.testimonial-gallery {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.testimonial-gallery h4 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00aaff;
+}
+
+.testimonials-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para el lightbox */
+.testimonial-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.testimonial-lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.testimonial-lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.testimonial-lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.testimonial-lightbox .close:hover,
+.testimonial-lightbox .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*----------Pie de Página----------*/
+footer {
+    background-color: #004d40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-media a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #80deea;
+}
+
+/*----------Estilos para las Olas----------*/
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 20vh; /* Reducir la altura */
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/*----------Animación de las Olas----------*/
+.parallax > use {
+    animation: move-forever 5s cubic-bezier(.20, .5, .30, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 5s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 5s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 5s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------Ajustes para dispositivos móviles----------*/
+@media (max-width: 768px) {
+    .navbar {
+        width: 200px;
+    }
+
+    .hamburger-tab {
+        left: 200px;
+    }
+
+    .waves {
+        height: 10vh;
+    }
+
+    section#inicio {
+        padding: 80px 10px;
+        min-height: 60vh;
+    }
+
+    section#inicio h1 {
+        font-size: 32px;
+    }
+
+    section#inicio .overlay-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    form input, form select, form textarea, form button {
+        max-width: 100%;
+    }
+}

@@ -1,11 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPLASHGARDEN</title>
+    <link rel="stylesheet" href="/SGestilo.css"> 
+<script src="/script.js"></script>
+    
 </head>
 <body>
+
+    <!-- Barra de Navegación Lateral -->
+    <nav class="navbar">
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio">SPLASHGARDEN</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#reservations">Reservaciones</a></li>
+            <li><a href="#testimonios">Comparte</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Pestaña con el ícono de hamburguesa -->
+    <div class="hamburger-tab">
+        <div class="hamburger"></div>
+    </div>
     
+    <!-- Sección de bienvenida -->
+    <section id="inicio" class="header">
+        <div class="inner-header flex">
+            <div class="overlay-box">
+                <h1>Bienvenidos a SPLASHGARDEN</h1>
+                <p>Tu lugar ideal para eventos junto a la alberca.</p>
+            </div>
+        </div>
+
+        <!-- Contenedor de las olas -->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(173, 216, 230, 0.7)" /> <!-- Azul claro -->
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(135, 206, 235, 0.5)" /> <!-- Azul cielo -->
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(70, 130, 180, 0.3)" /> <!-- Azul acero -->
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#4682B4" /> <!-- Azul acero sólido -->
+            </g>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>SPLASHGARDEN es un salón de eventos con más de 10 años de experiencia en la organización de eventos inolvidables. Ubicados en un entorno natural, contamos con una amplia piscina y jardines exuberantes que ofrecen el ambiente perfecto para bodas, fiestas de cumpleaños, eventos corporativos y más.</p>
+        <p>Nuestro equipo está dedicado a hacer que cada evento sea único, ofreciendo un servicio personalizado y atención a cada detalle. Nos enorgullece ser uno de los destinos más populares para eventos en la región, con una reputación construida sobre la satisfacción de nuestros clientes.</p>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services">
+        <h2>Servicios</h2>
+        <ul>
+            <li><strong>Organización de Eventos:</strong> Nos encargamos de la planificación y coordinación de tu evento, desde la decoración hasta el catering.</li>
+            <li><strong>Alquiler del Salón:</strong> Alquila nuestras instalaciones para eventos privados, con acceso completo a la piscina y jardines.</li>
+            <li><strong>Eventos Corporativos:</strong> Organizamos eventos empresariales, desde reuniones hasta conferencias, en un entorno profesional y relajante.</li>
+            <li><strong>Bodas:</strong> Celebra tu boda en un entorno romántico con vistas impresionantes y servicios completos de banquete.</li>
+            <li><strong>Fiestas Infantiles:</strong> Diversión asegurada con nuestras instalaciones y actividades diseñadas especialmente para los más pequeños.</li>
+        </ul>
+    </section>
+
+    <!-- Sección Galería -->
+    <section id="gallery">
+        <h2>Galería</h2>
+        <div class="gallery-container">
+            <img src="img/alberca.jpg" alt="Evento 1">
+            <img src="img/alberca.jpg" alt="Evento 2">
+            <img src="img/alberca.jpg" alt="Evento 3">
+            <img src="img/alberca.jpg" alt="Evento 4">
+            <img src="img/alberca.jpg" alt="Evento 4">
+            <img src="img/alberca.jpg" alt="Evento 4">
+        </div>
+        <p>Explora nuestras instalaciones y los eventos que hemos organizado. Cada imagen captura un momento especial en SPLASHGARDEN.</p>
+    </section>
+
+    <!-- Sección Eventos -->
+    <section id="events">
+        <h2>Eventos</h2>
+        <p>Descubre nuestros próximos eventos y promociones especiales. ¡No te los pierdas!</p>
+        <ul>
+            <li><strong>Concierto en Vivo:</strong> Sábado, 12 de Octubre. Disfruta de una noche de música en vivo junto a la piscina.</li>
+            <li><strong>Festival Gastronómico:</strong> Domingo, 20 de Octubre. Degusta lo mejor de la cocina local en nuestro festival anual.</li>
+            <li><strong>Noche de Cine Bajo las Estrellas:</strong> Viernes, 1 de Noviembre. Ven a disfrutar de una película al aire libre.</li>
+        </ul>
+    </section>
+
+    <!-- Sección Reservaciones -->
+    <section id="reservations">
+        <h2>Reservaciones</h2>
+        <p>Reserva tu evento con nosotros de manera fácil y rápida. Completa el formulario a continuación y nos pondremos en contacto contigo para confirmar los detalles.</p>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="event-type">Tipo de Evento:</label>
+            <select id="event-type" name="event-type" required>
+                <option value="wedding">Boda</option>
+                <option value="birthday">Cumpleaños</option>
+                <option value="corporate">Evento Corporativo</option>
+                <option value="other">Otro</option>
+            </select>
+            <label for="date">Fecha del Evento:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Reservar Ahora</button>
+        </form>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section class="testimonials-section" id="testimonios">
+        <div class="testimonials-content">
+            <h3>Deja Tu Opinión</h3>
+            <p>Comparte tu experiencia en SPLASHGARDEN. Tu opinión es muy valiosa para nosotros.</p>
+            
+            <form id="testimonial-form" action="php/upload_testimonial.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="username" placeholder="Tu nombre" required>
+                <textarea name="testimonial" placeholder="Comparte tu opinión (máximo 300 caracteres)" required maxlength="300"></textarea>
+                <input type="file" name="event_photo" required>
+                <button type="submit">Publicar</button>
+            </form>
+
+            <div class="testimonial-gallery" id="user-testimonials">
+                <h4>Opiniones de nuestros clientes</h4>
+                <div class="testimonials-display">
+                    <!-- Aquí se mostrarán los testimonios subidos por los usuarios -->
+                    <?php
+                    // Conexión a la base de datos
+                    $servername = "localhost"; 
+                    $username = "root"; 
+                    $password = ""; 
+                    $dbname = "splashgarden"; 
+
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+
+                    if ($conn->connect_error) {
+                        die("Conexión fallida: " . $conn->connect_error);
+                    }
+
+                    $sql = "SELECT username, testimonial, filepath FROM testimonials ORDER BY upload_time DESC";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo '<div class="testimonial-item">';
+                            echo '<img src="' . $row["filepath"] . '" alt="Foto del evento" loading="lazy" width="300" height="200" class="testimonial-photo" onclick="openTestimonialLightbox(this, \'' . $row["testimonial"] . '\')">';
+                            echo '<p>' . $row["testimonial"] . '<br><em>Compartido por ' . $row["username"] . '</em></p>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "<p>No se han subido testimonios aún.</p>";
+                    }
+
+                    $conn->close();
+                    ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox exclusivo para fotos de testimonios -->
+    <div id="testimonialLightbox" class="testimonial-lightbox">
+        <span class="close" onclick="closeTestimonialLightbox()">&times;</span>
+        <img class="testimonial-lightbox-content" id="testimonialLightboxImg">
+        <div id="testimonialLightboxCaption"></div>
+    </div>
+
+    <!-- Sección Contacto -->
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Contáctanos para más información o para reservar tu evento. Estamos aquí para ayudarte a crear recuerdos inolvidables.</p>
+        <p><strong>Dirección:</strong> Calle de las Flores 123, Ciudad Jardín</p>
+        <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+        <p><strong>Email:</strong> contacto@splashgarden.com</p>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 SPLASHGARDEN. Todos los derechos reservados.</p>
+        <div class="social-media">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Archivo JavaScript -->
 </body>
 </html>
